@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
-from .models import Team
-from cars.models import Car
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
-from django.contrib import messages
+from django.shortcuts import render, redirect
+
+from cars.models import Car
+from .models import Team
+
 
 # Create your views here.
 
@@ -34,8 +36,10 @@ def about(request):
     }
     return render(request, 'pages/about.html', data)
 
+
 def services(request):
     return render(request, 'pages/services.html')
+
 
 def contact(request):
     if request.method == 'POST':
@@ -51,12 +55,12 @@ def contact(request):
         admin_info = User.objects.get(is_superuser=True)
         admin_email = admin_info.email
         send_mail(
-                email_subject,
-                message_body,
-                'rathan.kumar049@gmail.com',
-                [admin_email],
-                fail_silently=False,
-            )
+            email_subject,
+            message_body,
+            'rathan.kumar049@gmail.com',
+            [admin_email],
+            fail_silently=False,
+        )
         messages.success(request, 'Thank you for contacting us. We will get back to you shortly')
         return redirect('contact')
 
