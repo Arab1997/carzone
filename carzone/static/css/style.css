@@ -2615,7 +2615,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .price-box .del{
-    color: red;
+    color: #007bff;
     font-size: 15px;
 }
 
@@ -6827,7 +6827,7 @@ footer {
 
 /** Carousel indicators section start **/
 .carousel-indicators-section{
-    background: red;
+    background: #007bff;
     display: inline-block;
     width: 100%;
 }
@@ -7218,7 +7218,7 @@ table {
 }
 
 .compare-table tr td .fa-times {
-    color: red;
+    color: #007bff;
 }
 
 .compare-table tr td .fa-check {
