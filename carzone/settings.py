@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth.account',
     'allauth.socialaccount',
+
     # Providers
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
@@ -160,11 +161,32 @@ MESSAGE_TAGS = {
 SITE_ID = 1
 
 # Email sending
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = '########'
+#EMAIL_HOST_PASSWORD = '#######'
+#EMAIL_USE_TLS = True
+
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_USE_TLS = True
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = 'maxmudovabdullo97@gmail.com'
+#EMAIL_HOST_PASSWORD = '3769197aa'
+#DEFAULT_FROM_EMAIL = '<Test>'
+
+
+
+import os
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = '########'
-EMAIL_HOST_PASSWORD = '#######'
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'no-reply@example.com')
 
 # Messages
 from django.contrib.messages import constants as messages
@@ -172,6 +194,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
+LOGIN_REDIRECT_URL = 'dashboard'
 
 CKEDITOR_CONFIGS = {
     'default': {

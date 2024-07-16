@@ -14,17 +14,6 @@ class Car(models.Model):
         ('AR', 'Arkansas'),
         ('CA', 'California'),
         ('GA', 'Georgia'),
-        ('KS', 'Kansas'),
-        ('KY', 'Kentucky'),
-        ('LA', 'Louisiana'),
-        ('ME', 'Maine'),
-        ('MD', 'Maryland'),
-        ('NV', 'Nevada'),
-        ('NH', 'New Hampshire'),
-        ('NJ', 'New Jersey'),
-        ('NM', 'New Mexico'),
-        ('NY', 'New York'),
-
     )
 
     year_choice = []
@@ -35,9 +24,7 @@ class Car(models.Model):
         ('Cruise Control', 'Cruise Control'),
         ('Audio Interface', 'Audio Interface'),
         ('Airbags', 'Airbags'),
-
     )
-
     door_choices = (
         ('2', '2'),
         ('3', '3'),
